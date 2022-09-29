@@ -1,5 +1,5 @@
 const express = require('express');
-const authMiddleware = require('./authenticate');
+const authMiddleware = require('./auth');
 
 const app = express()
 const port = 3000
