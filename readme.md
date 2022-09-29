@@ -3,9 +3,17 @@ Codebase for the "Basic Authentication" [video on my YouTube channel](https://yo
 
 ## Setup
 
+Clone and install the dependencies
+
 ```shell
-git clone git@github.com/kamranahmedse/node-basic-auth-example
+git clone git@github.com:kamranahmedse/node-basic-auth-example.git
 npm install
+```
+
+Run the setup
+
+```shell
+npm run start
 ```
 
 ## License
