@@ -10,7 +10,7 @@ git clone git@github.com:kamranahmedse/node-basic-auth-example.git
 npm install
 ```
 
-Run the setup
+Run the below command to start the application
 
 ```shell
 npm run start
