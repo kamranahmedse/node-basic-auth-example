@@ -1,7 +1,7 @@
 const base64 = require("base-64");
 
 module.exports = function authMiddleware(req, res, next) {
-  // Example Value: Basic given_auth_value
+  // Example Value: Basic YWRtaW46YWRtaW4=
   const authHeader = req.headers.authorization || '';
   // Example Value: YWRtaW46YWRtaW4=
   const encodedCredentials = authHeader.split(' ')[1] || '';
