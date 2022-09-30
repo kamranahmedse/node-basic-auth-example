@@ -12,10 +12,10 @@ function decodeCredentials(authHeader) {
 }
 
 module.exports = function authMiddleware(req, res, next) {
-  const [username, password] = decodeCredentials(req.headers.authorization);
+  const [username, password] = decodeCredentials(req.headers.authorization || '');
 
   if (username === 'admin' && password === 'admin') {
-    return next()
+    return next();
   }
 
   res.set('WWW-Authenticate', 'Basic realm="user_pages"');

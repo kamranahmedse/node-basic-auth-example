@@ -1,13 +1,13 @@
 const express = require('express');
 const authMiddleware = require('./auth');
 
-const app = express()
-const port = 3000
+const app = express();
+const port = 3000;
 
 app.use(authMiddleware);
 
 app.get('/', (req, res) => {
-  res.send('Hello World!')
+  res.send('Hello World!');
 });
 
 app.listen(port, () => {
