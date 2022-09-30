@@ -1,17 +1,19 @@
 const base64 = require("base-64");
 
-module.exports = function authMiddleware(req, res, next) {
-  // Example Value: Basic YWRtaW46YWRtaW4=
-  const authHeader = req.headers.authorization || '';
-  // Example Value: YWRtaW46YWRtaW4=
-  const encodedCredentials = authHeader.split(' ')[1] || '';
-  // Example Value: admin:admin
-  const decodedCredentials = base64.decode(encodedCredentials);
-  // username: admin
-  // password: admin
-  const [username, password] = decodedCredentials.split(':');
+function decodeCredentials(authHeader) {
+  // authHeader: Basic YWRtaW46YWRtaW4=
+  const encodedCredentials = authHeader
+    .trim()
+    .replace(/Basic\s+/i, '');
 
-  // Verify login and password are set and correct
+  const decodedCredentials = base64.decode(encodedCredentials);
+
+  return decodedCredentials.split(':');
+}
+
+module.exports = function authMiddleware(req, res, next) {
+  const [username, password] = decodeCredentials(req.headers.authorization);
+
   if (username === 'admin' && password === 'admin') {
     return next()
   }
