@@ -1,5 +1,5 @@
 # node-basic-auth-example
-Codebase for the "Basic Authentication" [video on my YouTube channel](https://youtube.com/theroadmap?sub_confirmation=1).
+Codebase for the "Basic Authentication" [video on my YouTube channel](https://www.youtube.com/watch?v=mwccHwUn7Gc).
 
 ## Setup
 
